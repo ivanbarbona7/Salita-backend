@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum EstadoIntento {
+  PENDIENTE
+  CONFIRMADO
+  RECHAZADO
+  USADO
+}
+
+model IntentoIngreso {
+  id       String        @id @default(auto()) @map("_id") @db.ObjectId
+  dni      String
+  nombre   String
+  apellido String
+  telefono String
+  estado   EstadoIntento @default(PENDIENTE)
+  creadoEn DateTime      @default(now())
+  expiraEn DateTime
+
+  @@index([dni, creadoEn])
+  @@map("intentos_ingreso")
+}
