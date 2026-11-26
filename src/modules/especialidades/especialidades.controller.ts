@@ -1,8 +1,8 @@
 import type { Request, Response } from 'express';
-import Especialidad from './Especialidad.model';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
+import Especialidad from './Especialidad.model.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
 
-import type { IQueryEspecialidades, ICrearEspecialidadDTO} from './dtos/especialidad.schema';
+import type { IQueryEspecialidades, ICrearEspecialidadDTO} from './dtos/especialidad.schema.js';
 
 const getEspecialidades = async (req: Request<unknown, unknown, unknown, IQueryEspecialidades>, res: Response) => {
     try {

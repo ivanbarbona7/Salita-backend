@@ -1,13 +1,13 @@
 import type { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import { Error as MongooseError } from 'mongoose';
-import Medico from './Medico.model';
-import Usuario, { Rol } from '../auth/Usuario.model';
-import Consultorio from '../consultorios/Consultorio.model';
-import { atiendeEspecialidad } from '../consultorios/atiendeEspecialidad';
-import { turnosFueraDeHorario, turnosPendientesEnRango } from '../turnos/turnos.service';
-import { errorDeRango, type IRangoDTO } from '../../utils/rangoFechas';
-import { NOMBRES_DIA } from '../../utils/franja.schema';
+import Medico from './Medico.model.js';
+import Usuario, { Rol } from '../auth/Usuario.model.js';
+import Consultorio from '../consultorios/Consultorio.model.js';
+import { atiendeEspecialidad } from '../consultorios/atiendeEspecialidad.js';
+import { turnosFueraDeHorario, turnosPendientesEnRango } from '../turnos/turnos.service.js';
+import { errorDeRango, type IRangoDTO } from '../../utils/rangoFechas.js';
+import { NOMBRES_DIA } from '../../utils/franja.schema.js';
 import type {
     IActualizarHorarioDTO,
     IActualizarMedicoDTO,
@@ -15,9 +15,9 @@ import type {
     ICambiarPasswordMedicoDTO,
     ICrearMedicoDTO,
     IQueryMedicos,
-} from './dtos/medico.schema';
+} from './dtos/medico.schema.js';
 
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
 
 const mensajeDeError = (error: unknown) =>
     error instanceof Error ? error.message : 'Error del servidor';

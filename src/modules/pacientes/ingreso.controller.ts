@@ -1,9 +1,9 @@
 import type { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { ZodError } from 'zod';
-import { Rol } from '../auth/Usuario.model';
-import { buscarOCrearPorDniIngreso } from './paciente.service';
-import { ingresoSchema } from './dtos/Paciente.schema';
+import { Rol } from '../auth/Usuario.model.js';
+import { buscarOCrearPorDniIngreso } from './paciente.service.js';
+import { ingresoSchema } from './dtos/Paciente.schema.js';
 
 export const ingresoRapido = async (req: Request, res: Response) => {
   try {

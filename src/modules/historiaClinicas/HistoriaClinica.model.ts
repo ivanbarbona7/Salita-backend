@@ -1,5 +1,5 @@
 import { model, Schema } from 'mongoose';
-import { ACTIVIDADES_FISICAS, type IHistoriaClinica } from './types/historiaClinica.interface';
+import { ACTIVIDADES_FISICAS, type IHistoriaClinica } from './types/historiaClinica.interface.js';
 
 // Se devuelven "id" en lugar de "_id" y sin "__v", como el resto de los modelos
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -7,16 +7,16 @@ import {
     getPacientes,
     modificarPaciente,
     reactivarPaciente,
-} from './pacientes.controller';
-import { validarSchema } from '../../middlewares/validarDatos.middleware';
-import { actualizarPacienteSchema, crearPacienteSchema, queryPacientesSchema } from './dtos/Paciente.schema';
-import { validarJWT } from '../../middlewares/validarJWT.middleware';
-import { verificarRol } from '../../middlewares/verificarRol.middleware';
-import { Rol } from '../auth/Usuario.model';
-import { ingresoRapido } from './ingreso.controller';
-import { soloConCuenta } from '../../middlewares/soloConCuenta.middleware';
-import { getMiPerfil, actualizarMiPerfil, cambiarMiPassword } from './Paciente.yo.controller';
-import { actualizarPerfilPacienteSchema, cambiarPasswordPacienteSchema } from './dtos/Paciente.perfil.schema';
+} from './pacientes.controller.js';
+import { validarSchema } from '../../middlewares/validarDatos.middleware.js';
+import { actualizarPacienteSchema, crearPacienteSchema, queryPacientesSchema } from './dtos/Paciente.schema.js';
+import { validarJWT } from '../../middlewares/validarJWT.middleware.js';
+import { verificarRol } from '../../middlewares/verificarRol.middleware.js';
+import { Rol } from '../auth/Usuario.model.js';
+import { ingresoRapido } from './ingreso.controller.js';
+import { soloConCuenta } from '../../middlewares/soloConCuenta.middleware.js';
+import { getMiPerfil, actualizarMiPerfil, cambiarMiPassword } from './Paciente.yo.controller.js';
+import { actualizarPerfilPacienteSchema, cambiarPasswordPacienteSchema } from './dtos/Paciente.perfil.schema.js';
 
 const router = Router();
 

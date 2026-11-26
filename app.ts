@@ -5,24 +5,24 @@ dotenv.config();
 
 import cors from 'cors';
 import express from 'express';
-import { connectDB } from'./src/config/database';
+import { connectDB } from'./src/config/database.js';
 
 
 
 connectDB();
 
-import auditMiddleware from'./src/middlewares/auditoria.middleware';
-import errorHandlerMiddleware from'./src/middlewares/errorHandler.middleware';
-import turnosRoutes  from './src/modules/turnos/turnos.routes';
-import pacientesRoutes from './src/modules/pacientes/pacientes.routes';
-import historiaClinicasRoutes from './src/modules/historiaClinicas/HistoriaClinicas.routes';
-import especialidadRoutes from './src/modules/especialidades/especialidad.routes';
-import medicoRoutes from'./src/modules/medicos/medico.routes';
-import personalRoutes from './src/modules/personal/Personal.routes';
-import consultorioRoutes from './src/modules/consultorios/consultorios.routes';
-import authRoutes from './src/modules/auth/auth.routes';
-import esperaRoutes from './src/modules/espera/Espera.routes';
-import obrasSocialesRoutes from './src/modules/obrasSociales/obrasSociales.routes';
+import auditMiddleware from'./src/middlewares/auditoria.middleware.js';
+import errorHandlerMiddleware from'./src/middlewares/errorHandler.middleware.js';
+import turnosRoutes  from './src/modules/turnos/turnos.routes.js';
+import pacientesRoutes from './src/modules/pacientes/pacientes.routes.js';
+import historiaClinicasRoutes from './src/modules/historiaClinicas/HistoriaClinicas.routes.js';
+import especialidadRoutes from './src/modules/especialidades/especialidad.routes.js';
+import medicoRoutes from'./src/modules/medicos/medico.routes.js';
+import personalRoutes from './src/modules/personal/Personal.routes.js';
+import consultorioRoutes from './src/modules/consultorios/consultorios.routes.js';
+import authRoutes from './src/modules/auth/auth.routes.js';
+import esperaRoutes from './src/modules/espera/Espera.routes.js';
+import obrasSocialesRoutes from './src/modules/obrasSociales/obrasSociales.routes.js';
 
 
 

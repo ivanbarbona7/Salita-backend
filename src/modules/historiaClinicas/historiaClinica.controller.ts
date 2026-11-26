@@ -1,12 +1,12 @@
 import type { Request, Response } from 'express';
 import { isValidObjectId } from 'mongoose';
-import HistoriaClinica from './HistoriaClinica.model';
-import Paciente from '../pacientes/Paciente.model';
-import Turno from '../turnos/Turno.model';
-import { EstadoTurno } from '../turnos/types/TurnoEstado.enum';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
-import { sumarDias, hoyAR } from '../../utils/rangoFechas';
-import type { IAntecedentesDTO, IConsultaDTO } from './dtos/historiaClinica.schema';
+import HistoriaClinica from './HistoriaClinica.model.js';
+import Paciente from '../pacientes/Paciente.model.js';
+import Turno from '../turnos/Turno.model.js';
+import { EstadoTurno } from '../turnos/types/TurnoEstado.enum.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
+import { sumarDias, hoyAR } from '../../utils/rangoFechas.js';
+import type { IAntecedentesDTO, IConsultaDTO } from './dtos/historiaClinica.schema.js';
 
 // Historia clínica: una por paciente, con sus antecedentes y una lista de consultas que solo se agregan.
 // Todas las rutas exigen sesión; ver y editar antecedentes: ADMIN y MEDICO; agregar consultas: solo MEDICO.

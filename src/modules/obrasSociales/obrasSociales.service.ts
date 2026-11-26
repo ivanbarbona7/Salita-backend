@@ -1,4 +1,4 @@
-import ObraSocial from './ObraSocial.model';
+import ObraSocial from './ObraSocial.model.js';
 
 export const OBRA_SOCIAL_POR_DEFECTO = 'NINGUNA';
 

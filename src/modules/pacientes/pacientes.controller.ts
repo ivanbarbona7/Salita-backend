@@ -1,11 +1,11 @@
 import type { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
-import Paciente from './Paciente.model';
-import type { IActualizarPacienteDTO, ICrearPacienteDTO, IQueryPacientes } from './dtos/Paciente.schema';
-import Usuario, { Rol } from '../auth/Usuario.model'; // ajustá si Usuario no es export default
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
-import { turnosPendientesDePaciente } from '../turnos/turnos.service';
-import { validarObraSocial } from '../obrasSociales/obrasSociales.service';
+import Paciente from './Paciente.model.js';
+import type { IActualizarPacienteDTO, ICrearPacienteDTO, IQueryPacientes } from './dtos/Paciente.schema.js';
+import Usuario, { Rol } from '../auth/Usuario.model.js'; // ajustá si Usuario no es export default
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
+import { turnosPendientesDePaciente } from '../turnos/turnos.service.js';
+import { validarObraSocial } from '../obrasSociales/obrasSociales.service.js';
 
 const mensajeError = (error: unknown) => (error instanceof Error ? error.message : null);
 

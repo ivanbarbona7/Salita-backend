@@ -1,16 +1,16 @@
 import type { Request, Response } from 'express';
-import Medico from '../medicos/Medico.model';
-import Consultorio from '../consultorios/Consultorio.model';
-import Especialidad from '../especialidades/Especialidad.model';
-import Turno from './Turno.model';
-import { EstadoTurno } from './types/TurnoEstado.enum';
+import Medico from '../medicos/Medico.model.js';
+import Consultorio from '../consultorios/Consultorio.model.js';
+import Especialidad from '../especialidades/Especialidad.model.js';
+import Turno from './Turno.model.js';
+import { EstadoTurno } from './types/TurnoEstado.enum.js';
 import {
     claveDia, diaLimitePaciente, disponibilidadPorMedico, horariosDeUnDia,
     diasLibresEnConsultorio, motivoNoReprogramarPaciente, reprogramarTurno, HORAS_PARA_CAMBIAR,
-} from './turnos.service';
-import type { IReprogramarTurnoDTO } from './dtos/turno.schema';
-import type { IQueryDiasPaciente, IQueryHorariosPaciente, IQueryMedicosPaciente } from './dtos/Turnos.paciente.schema';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
+} from './turnos.service.js';
+import type { IReprogramarTurnoDTO } from './dtos/turno.schema.js';
+import type { IQueryDiasPaciente, IQueryHorariosPaciente, IQueryMedicosPaciente } from './dtos/Turnos.paciente.schema.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
 
 // Pantallas del PACIENTE (ingreso rápido o con cuenta). El paciente siempre sale del token.
 

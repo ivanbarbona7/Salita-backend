@@ -1,7 +1,7 @@
 
 import { Schema, model, Document } from 'mongoose';
-import type { IEspecialidad } from './types/especialidad.interface';
-import { CATEGORIAS_ESPECIALIDAD } from './types/especialidad.categoria';
+import type { IEspecialidad } from './types/especialidad.interface.js';
+import { CATEGORIAS_ESPECIALIDAD } from './types/especialidad.categoria.js';
 
 const especialidadSchema = new Schema<IEspecialidad>({
     nombre: {

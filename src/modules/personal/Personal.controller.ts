@@ -1,8 +1,8 @@
 import type { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
-import Usuario, { Rol } from '../auth/Usuario.model';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
-import type { IActualizarPersonalDTO, ICrearPersonalDTO, IQueryPersonal } from './dtos/personal.schema';
+import Usuario, { Rol } from '../auth/Usuario.model.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
+import type { IActualizarPersonalDTO, ICrearPersonalDTO, IQueryPersonal } from './dtos/personal.schema.js';
 
 const mensajeDeError = (error: unknown) => (error instanceof Error ? error.message : 'Error del servidor');
 

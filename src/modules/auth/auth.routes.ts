@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { registrarUsuario, loginUsuario } from './auth.controller';
-import { validarJWT } from '../../middlewares/validarJWT.middleware';
+import { registrarUsuario, loginUsuario } from './auth.controller.js';
+import { validarJWT } from '../../middlewares/validarJWT.middleware.js';
 
 
 const router = Router();

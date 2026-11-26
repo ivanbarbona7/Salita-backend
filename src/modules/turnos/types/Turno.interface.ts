@@ -1,5 +1,5 @@
 import { Types, Document } from "mongoose";
-import { EstadoTurno } from "./TurnoEstado.enum";
+import { EstadoTurno } from "./TurnoEstado.enum.js";
 
 // CAMBIO: se quitaron los campos repetidos (medicoId, fecha, especialidadId) y se agregó el consultorio.
 export interface ITurno extends Document {

@@ -1,15 +1,15 @@
 import type { Request, Response } from 'express';
 import { Types } from 'mongoose';
 import { z } from 'zod';
-import { EstadoTurno } from './types/TurnoEstado.enum';
-import Turno from './Turno.model';
-import Paciente from '../pacientes/Paciente.model';
-import Medico from '../medicos/Medico.model';
-import { calcularHorariosLibres, reprogramarTurno, validarTurno, diaLimitePaciente, claveDia, MAX_TURNOS_PENDIENTES, DIAS_MAX_PACIENTE } from './turnos.service';
-import { hoyAR } from '../../utils/rangoFechas';
-import { turnoPacienteSchema } from './dtos/turno.schema';
-import type { CrearTurnoDTO, IQueryDisponibilidad, IQueryListadoTurnos, IQueryUrgencia, IReprogramarTurnoDTO } from './dtos/turno.schema';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
+import { EstadoTurno } from './types/TurnoEstado.enum.js';
+import Turno from './Turno.model.js';
+import Paciente from '../pacientes/Paciente.model.js';
+import Medico from '../medicos/Medico.model.js';
+import { calcularHorariosLibres, reprogramarTurno, validarTurno, diaLimitePaciente, claveDia, MAX_TURNOS_PENDIENTES, DIAS_MAX_PACIENTE } from './turnos.service.js';
+import { hoyAR } from '../../utils/rangoFechas.js';
+import { turnoPacienteSchema } from './dtos/turno.schema.js';
+import type { CrearTurnoDTO, IQueryDisponibilidad, IQueryListadoTurnos, IQueryUrgencia, IReprogramarTurnoDTO } from './dtos/turno.schema.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
 
 const mensajeDeError = (error: unknown) =>
     error instanceof Error ? error.message : 'Error interno del servidor';

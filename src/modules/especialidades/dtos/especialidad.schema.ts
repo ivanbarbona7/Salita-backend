@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { CATEGORIAS_ESPECIALIDAD } from '../types/especialidad.categoria';
+import { CATEGORIAS_ESPECIALIDAD } from '../types/especialidad.categoria.js';
 
 export const crearEspecialidadSchema = z.object({
     body: z.object({

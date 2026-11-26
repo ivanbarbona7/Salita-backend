@@ -1,7 +1,7 @@
 import { model, Schema, Types, Document } from 'mongoose';
-import type { IMedico } from './types/Medico.interface';
-import { TipoTelefono } from './types/MedicoTelefono.enum';
-import { rangoFechasMongoose } from '../../utils/rangoFechas';
+import type { IMedico } from './types/Medico.interface.js';
+import { TipoTelefono } from './types/MedicoTelefono.enum.js';
+import { rangoFechasMongoose } from '../../utils/rangoFechas.js';
 
 // "HH:mm" en formato de 24 horas
 const HORA = /^([01]\d|2[0-3]):[0-5]\d$/;

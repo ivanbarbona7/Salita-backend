@@ -1,17 +1,17 @@
 import { Router } from 'express';
-import { getTurnos, getDisponibilidad, createTurno, deleteTurno, marcarAtendido, marcarNoAsistio, deshacerNoAsistio, crearTurnoPaciente, reprogramarTurnoPersonal, cancelarTurno, cancelarTurnos } from './turnos.controller';
-import { validarSchema } from '../../middlewares/validarDatos.middleware';
-import { CrearTurnoSchema, queryDisponibilidadSchema, reprogramarTurnoSchema, queryListadoTurnosSchema, cancelarTurnosSchema } from './dtos/turno.schema';
-import { validarJWT } from '../../middlewares/validarJWT.middleware';
-import { verificarRol } from '../../middlewares/verificarRol.middleware';
-import { Rol } from '../auth/Usuario.model';
-import { soloConCuenta } from '../../middlewares/soloConCuenta.middleware';
+import { getTurnos, getDisponibilidad, createTurno, deleteTurno, marcarAtendido, marcarNoAsistio, deshacerNoAsistio, crearTurnoPaciente, reprogramarTurnoPersonal, cancelarTurno, cancelarTurnos } from './turnos.controller.js';
+import { validarSchema } from '../../middlewares/validarDatos.middleware.js';
+import { CrearTurnoSchema, queryDisponibilidadSchema, reprogramarTurnoSchema, queryListadoTurnosSchema, cancelarTurnosSchema } from './dtos/turno.schema.js';
+import { validarJWT } from '../../middlewares/validarJWT.middleware.js';
+import { verificarRol } from '../../middlewares/verificarRol.middleware.js';
+import { Rol } from '../auth/Usuario.model.js';
+import { soloConCuenta } from '../../middlewares/soloConCuenta.middleware.js';
 import {
     getEspecialidadesPaciente, getMedicosPaciente, getDiasPaciente, getHorariosPaciente, getMisTurnos, cancelarTurnoPaciente, getDiasReprogramar, reprogramarTurnoPaciente,
-} from './Turnos.paciente.controller';
-import { getMisTurnosMedico, marcarAtendidoMedico } from './Turnos.medico.controller';
-import { queryTurnosMedicoSchema } from './dtos/Turno.medico.schema';
-import { queryMedicosPacienteSchema, queryDiasPacienteSchema, queryHorariosPacienteSchema } from './dtos/Turnos.paciente.schema';
+} from './Turnos.paciente.controller.js';
+import { getMisTurnosMedico, marcarAtendidoMedico } from './Turnos.medico.controller.js';
+import { queryTurnosMedicoSchema } from './dtos/Turno.medico.schema.js';
+import { queryMedicosPacienteSchema, queryDiasPacienteSchema, queryHorariosPacienteSchema } from './dtos/Turnos.paciente.schema.js';
 
 const router = Router();
 

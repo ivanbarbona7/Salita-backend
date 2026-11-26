@@ -1,9 +1,9 @@
 import type { Request, Response } from 'express';
-import Turno from './Turno.model';
-import { EstadoTurno } from './types/TurnoEstado.enum';
-import { claveDia } from './turnos.service';
-import type { IQueryTurnosMedico } from './dtos/Turno.medico.schema';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
+import Turno from './Turno.model.js';
+import { EstadoTurno } from './types/TurnoEstado.enum.js';
+import { claveDia } from './turnos.service.js';
+import type { IQueryTurnosMedico } from './dtos/Turno.medico.schema.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
 
 // Pantallas del MÉDICO. El médico siempre sale del token: solo ve y modifica sus propios turnos.
 

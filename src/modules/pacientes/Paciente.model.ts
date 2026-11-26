@@ -1,6 +1,6 @@
 import { model, Schema, Document } from "mongoose";
-import type { IPaciente } from './types/Paciente.interface';
-import { TipoTelefono } from './types/PacienteTelefono.enum';
+import type { IPaciente } from './types/Paciente.interface.js';
+import { TipoTelefono } from './types/PacienteTelefono.enum.js';
 
 const pacienteSchema = new Schema<IPaciente>({
     nombre: {

@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 import type { Request, Response } from 'express';
-import { prisma } from '../../config/prisma';
+import { prisma } from '../../config/prisma.js';
 
 export const verificarWebhook = (req: Request, res: Response) => {
   const ok = req.query['hub.verify_token'] === process.env.WHATSAPP_VERIFY_TOKEN;

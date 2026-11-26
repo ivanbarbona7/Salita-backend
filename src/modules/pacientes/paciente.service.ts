@@ -1,6 +1,6 @@
-import Paciente from './Paciente.model';
-import { TipoTelefono } from './types/PacienteTelefono.enum';
-import { separarTelefono } from '../../utils/telefonoAR';
+import Paciente from './Paciente.model.js';
+import { TipoTelefono } from './types/PacienteTelefono.enum.js';
+import { separarTelefono } from '../../utils/telefonoAR.js';
 
 export const buscarPorDni = (dni: string) => Paciente.findOne({ dni });
 

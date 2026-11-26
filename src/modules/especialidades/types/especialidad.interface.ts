@@ -1,5 +1,5 @@
 import {Document, Types} from 'mongoose';
-import type { CategoriaEspecialidad } from './especialidad.categoria';
+import type { CategoriaEspecialidad } from './especialidad.categoria.js';
 
 export interface IEspecialidad extends Document {
     id?: Types.ObjectId;

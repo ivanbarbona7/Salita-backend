@@ -1,8 +1,8 @@
 import type { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import Usuario, { Rol } from './Usuario.model';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
+import Usuario, { Rol } from './Usuario.model.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
 
 const mensajeDeError = (error: unknown) =>
     error instanceof Error ? error.message : 'Error del servidor';

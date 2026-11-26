@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { recibirWebhook, verificarWebhook } from './whatsapp.controller';
+import { recibirWebhook, verificarWebhook } from './whatsapp.controller.js';
 
 const router = Router();
 router.get('/', verificarWebhook);

@@ -1,5 +1,5 @@
 import type { NextFunction, Request, Response } from 'express';
-import { respuestaEstandar } from '../utils/respuestaEstandar';
+import { respuestaEstandar } from '../utils/respuestaEstandar.js';
 
 // Rutas "/medicos/yo/...": el médico sale del token, nunca de la URL ni del body.
 // Pone su id en req.params.id para reutilizar los mismos controladores que usan admin y recepción.

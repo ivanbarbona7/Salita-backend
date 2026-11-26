@@ -1,11 +1,11 @@
 import type { Request, Response } from 'express';
 import { isValidObjectId } from 'mongoose';
-import ObraSocial from './ObraSocial.model';
-import Paciente from '../pacientes/Paciente.model';
-import { Rol } from '../auth/Usuario.model';
-import { asegurarNinguna } from './obrasSociales.service';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
-import type { CrearObraSocialDTO, QueryObrasSocialesDTO } from './dtos/obraSocial.schema';
+import ObraSocial from './ObraSocial.model.js';
+import Paciente from '../pacientes/Paciente.model.js';
+import { Rol } from '../auth/Usuario.model.js';
+import { asegurarNinguna } from './obrasSociales.service.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
+import type { CrearObraSocialDTO, QueryObrasSocialesDTO } from './dtos/obraSocial.schema.js';
 
 const mensajeDeError = (error: unknown) => (error instanceof Error ? error.message : 'Error interno del servidor');
 

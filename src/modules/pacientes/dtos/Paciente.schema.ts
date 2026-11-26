@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { TipoTelefono } from '../types/PacienteTelefono.enum';
+import { TipoTelefono } from '../types/PacienteTelefono.enum.js';
 
 export const direccionSchema = z.object({
     calle: z.string(),

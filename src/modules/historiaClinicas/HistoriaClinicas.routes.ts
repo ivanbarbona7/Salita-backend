@@ -1,15 +1,15 @@
 import { Router } from 'express';
-import { validarSchema } from '../../middlewares/validarDatos.middleware';
-import { validarJWT } from '../../middlewares/validarJWT.middleware';
-import { verificarRol } from '../../middlewares/verificarRol.middleware';
-import { Rol } from '../auth/Usuario.model';
+import { validarSchema } from '../../middlewares/validarDatos.middleware.js';
+import { validarJWT } from '../../middlewares/validarJWT.middleware.js';
+import { verificarRol } from '../../middlewares/verificarRol.middleware.js';
+import { Rol } from '../auth/Usuario.model.js';
 import {
     getHistoriaDePaciente,
     guardarAntecedentes,
     agregarConsulta,
     getTurnosParaAtender,
-} from './historiaClinica.controller';
-import { actualizarAntecedentesSchema, crearConsultaSchema } from './dtos/historiaClinica.schema';
+} from './historiaClinica.controller.js';
+import { actualizarAntecedentesSchema, crearConsultaSchema } from './dtos/historiaClinica.schema.js';
 
 const router = Router();
 

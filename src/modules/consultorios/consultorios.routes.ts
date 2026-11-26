@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { validarSchema } from '../../middlewares/validarDatos.middleware';
+import { validarSchema } from '../../middlewares/validarDatos.middleware.js';
 import {
     getConsultorios,
     getConsultorioById,
@@ -10,12 +10,12 @@ import {
     deleteConsultorio,
     agregarCierreConsultorio,
     quitarCierreConsultorio,
-} from './consultorios.controller';
-import { actualizarConsultorioSchema, crearConsultorioSchema, queryConsultoriosSchema } from './dtos/consultorio.schema';
-import { validarJWT } from '../../middlewares/validarJWT.middleware';
-import { verificarRol } from '../../middlewares/verificarRol.middleware';
-import { crearRangoSchema } from '../../utils/rangoFechas';
-import { Rol } from '../auth/Usuario.model';
+} from './consultorios.controller.js';
+import { actualizarConsultorioSchema, crearConsultorioSchema, queryConsultoriosSchema } from './dtos/consultorio.schema.js';
+import { validarJWT } from '../../middlewares/validarJWT.middleware.js';
+import { verificarRol } from '../../middlewares/verificarRol.middleware.js';
+import { crearRangoSchema } from '../../utils/rangoFechas.js';
+import { Rol } from '../auth/Usuario.model.js';
 
 const router = Router();
 

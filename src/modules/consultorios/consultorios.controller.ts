@@ -1,13 +1,13 @@
 import type { Request, Response } from 'express';
 import { Error as MongooseError } from 'mongoose';
 import type { HydratedDocument } from 'mongoose';
-import Consultorio from './Consultorio.model';
-import Medico from '../medicos/Medico.model';
-import type { IConsultorio } from './types/Consultorio.interface';
-import type { IActualizarConsultorioDTO, ICrearConsultorioDTO, IQueryConsultorios } from './dtos/consultorio.schema';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
-import { turnosFueraDeHorarioConsultorio, turnosPendientesEnRango } from '../turnos/turnos.service';
-import { errorDeRango, type IRangoDTO } from '../../utils/rangoFechas';
+import Consultorio from './Consultorio.model.js';
+import Medico from '../medicos/Medico.model.js';
+import type { IConsultorio } from './types/Consultorio.interface.js';
+import type { IActualizarConsultorioDTO, ICrearConsultorioDTO, IQueryConsultorios } from './dtos/consultorio.schema.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
+import { turnosFueraDeHorarioConsultorio, turnosPendientesEnRango } from '../turnos/turnos.service.js';
+import { errorDeRango, type IRangoDTO } from '../../utils/rangoFechas.js';
 
 const mensajeDeError = (error: unknown) =>
   error instanceof Error ? error.message : 'Error del servidor';

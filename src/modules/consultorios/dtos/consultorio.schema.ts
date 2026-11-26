@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { TipoTelefono } from '../types/ConsultorioTelefono.enum';
-import { franjaSchema, haySuperposicion } from '../../../utils/franja.schema';
+import { TipoTelefono } from '../types/ConsultorioTelefono.enum.js';
+import { franjaSchema, haySuperposicion } from '../../../utils/franja.schema.js';
 
 export const direccionSchema = z.object({
     calle: z.string(),

@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { Rol, TurnoLaboral } from '../../auth/Usuario.model';
-import { diaNacimientoSchema, diaNoFuturoSchema } from '../../../utils/fechaNacimiento';
+import { Rol, TurnoLaboral } from '../../auth/Usuario.model.js';
+import { diaNacimientoSchema, diaNoFuturoSchema } from '../../../utils/fechaNacimiento.js';
 
 const nombrePropio = (mensaje: string) => z.string().trim().min(2, mensaje).max(40, 'Máximo 40 caracteres');
 

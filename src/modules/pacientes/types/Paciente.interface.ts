@@ -1,5 +1,5 @@
 import { Document, Types } from 'mongoose';
-import { TipoTelefono } from './PacienteTelefono.enum';
+import { TipoTelefono } from './PacienteTelefono.enum.js';
 
 export interface IDireccion {
     calle: string;

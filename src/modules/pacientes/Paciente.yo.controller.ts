@@ -1,11 +1,11 @@
 import type { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import { Error as MongooseError } from 'mongoose';
-import Paciente from './Paciente.model';
-import Usuario from '../auth/Usuario.model';
-import type { IActualizarPerfilPacienteDTO, ICambiarPasswordPacienteDTO } from './dtos/Paciente.perfil.schema';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
-import { validarObraSocial } from '../obrasSociales/obrasSociales.service';
+import Paciente from './Paciente.model.js';
+import Usuario from '../auth/Usuario.model.js';
+import type { IActualizarPerfilPacienteDTO, ICambiarPasswordPacienteDTO } from './dtos/Paciente.perfil.schema.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
+import { validarObraSocial } from '../obrasSociales/obrasSociales.service.js';
 
 // Perfil del PACIENTE con cuenta. El paciente siempre sale del token, nunca de la URL ni del body.
 

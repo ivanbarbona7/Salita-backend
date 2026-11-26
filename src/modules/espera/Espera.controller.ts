@@ -1,13 +1,13 @@
 import type { Request, Response } from 'express';
 import { isValidObjectId } from 'mongoose';
-import ListaEspera, { EstadoEspera } from './ListaEspera.model';
-import Turno from '../turnos/Turno.model';
-import Paciente from '../pacientes/Paciente.model';
-import Medico from '../medicos/Medico.model';
-import { EstadoTurno } from '../turnos/types/TurnoEstado.enum';
-import { calcularHorariosLibres, claveDia, validarTurno } from '../turnos/turnos.service';
-import { respuestaEstandar } from '../../utils/respuestaEstandar';
-import type { AsignarEsperaDTO, CrearEsperaDTO, QueryEsperaDTO } from './dtos/Espera.schema';
+import ListaEspera, { EstadoEspera } from './ListaEspera.model.js';
+import Turno from '../turnos/Turno.model.js';
+import Paciente from '../pacientes/Paciente.model.js';
+import Medico from '../medicos/Medico.model.js';
+import { EstadoTurno } from '../turnos/types/TurnoEstado.enum.js';
+import { calcularHorariosLibres, claveDia, validarTurno } from '../turnos/turnos.service.js';
+import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
+import type { AsignarEsperaDTO, CrearEsperaDTO, QueryEsperaDTO } from './dtos/Espera.schema.js';
 
 const esClaveDuplicada = (error: unknown) =>
     typeof error === 'object' && error !== null && 'code' in error && error.code === 11000;

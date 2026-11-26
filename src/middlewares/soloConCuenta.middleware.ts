@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { respuestaEstandar } from '../utils/respuestaEstandar';
+import { respuestaEstandar } from '../utils/respuestaEstandar.js';
 
 // Ver o cancelar turnos muestra datos de salud: no se permite con el ingreso rápido (solo DNI, nombre y teléfono).
 // El token del ingreso rápido lleva ingreso: 'rapido'; el del login con usuario y contraseña no.

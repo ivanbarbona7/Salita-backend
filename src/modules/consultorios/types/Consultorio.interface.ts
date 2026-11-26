@@ -1,6 +1,6 @@
 import { Document, Types } from 'mongoose';
-import { TipoTelefono } from './ConsultorioTelefono.enum';
-import type { IRango } from '../../../utils/rangoFechas';
+import { TipoTelefono } from './ConsultorioTelefono.enum.js';
+import type { IRango } from '../../../utils/rangoFechas.js';
 
 export interface ITelefono {
     tipo?: TipoTelefono;

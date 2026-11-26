@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { TipoTelefono } from '../types/PacienteTelefono.enum';
+import { TipoTelefono } from '../types/PacienteTelefono.enum.js';
 
 // Lo que el propio paciente puede editar de su ficha: teléfono, dirección y obra social.
 // Nombre, apellido, DNI y email los corrige recepción o administración

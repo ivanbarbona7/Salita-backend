@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { TipoTelefono } from '../types/MedicoTelefono.enum';
-import { franjaMedicoSchema, haySuperposicion } from '../../../utils/franja.schema';
+import { TipoTelefono } from '../types/MedicoTelefono.enum.js';
+import { franjaMedicoSchema, haySuperposicion } from '../../../utils/franja.schema.js';
 
 export const queryMedicosSchema = z.object ({
     query: z.object({

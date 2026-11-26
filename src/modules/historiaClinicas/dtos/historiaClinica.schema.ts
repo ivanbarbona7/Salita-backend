@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ACTIVIDADES_FISICAS } from '../types/historiaClinica.interface';
+import { ACTIVIDADES_FISICAS } from '../types/historiaClinica.interface.js';
 
 // Cada ítem de una lista se limpia y no puede quedar vacío. Los esquemas no transforman el tipo
 // (entran y salen listas de texto), así que se pueden aplicar más de una vez sin problema.

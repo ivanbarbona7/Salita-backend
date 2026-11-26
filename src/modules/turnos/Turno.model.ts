@@ -1,6 +1,6 @@
 import { model, Schema, Document } from "mongoose";
-import type { ITurno } from "./types/Turno.interface";
-import { EstadoTurno } from './types/TurnoEstado.enum';
+import type { ITurno } from "./types/Turno.interface.js";
+import { EstadoTurno } from './types/TurnoEstado.enum.js';
 
 // CAMBIO: modelo limpio. Antes tenía medico y medicoId, y fecha, fechaTurno y fechaFin repetidos,
 // y no guardaba el consultorio. verificarDisponibilidadTurno pasó a turnos.service.ts.

@@ -5,8 +5,8 @@
 // Uso (desde la carpeta del backend, con la base configurada en el .env):
 //   npx tsx --env-file=.env src/scripts/migrarObrasSociales.ts
 import mongoose from 'mongoose';
-import Paciente from '../modules/pacientes/Paciente.model';
-import ObraSocial from '../modules/obrasSociales/ObraSocial.model';
+import Paciente from '../modules/pacientes/Paciente.model.js';
+import ObraSocial from '../modules/obrasSociales/ObraSocial.model.js';
 
 await mongoose.connect(process.env.MONGO_URI ?? process.env.MONGODB_URI ?? '');
 

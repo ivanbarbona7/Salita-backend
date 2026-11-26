@@ -3,8 +3,8 @@
 //   npx tsx --env-file=.env src/scripts/migrarTelefonos.ts
 // Solo toca pacientes cuyo código de área está vacío y cuyo número tiene exactamente 10 cifras.
 import mongoose from 'mongoose';
-import Paciente from '../modules/pacientes/Paciente.model';
-import { separarTelefono } from '../utils/telefonoAR';
+import Paciente from '../modules/pacientes/Paciente.model.js';
+import { separarTelefono } from '../utils/telefonoAR.js';
 
 await mongoose.connect(process.env.MONGO_URI ?? process.env.MONGODB_URI ?? '');
 

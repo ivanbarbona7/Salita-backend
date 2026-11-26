@@ -1,10 +1,10 @@
 import {Router} from 'express';
-import { validarSchema } from '../../middlewares/validarDatos.middleware';
-import { getEspecialidades, getEspecialidadById, createEspecialidad, updateEspecialidad, deleteEspecialidad, desactivarEspecialidad } from './especialidades.controller';
-import { crearEspecialidadSchema } from './dtos/especialidad.schema';
-import { verificarRol } from '../../middlewares/verificarRol.middleware';
-import { Rol } from '../auth/Usuario.model';
-import { validarJWT } from '../../middlewares/validarJWT.middleware';
+import { validarSchema } from '../../middlewares/validarDatos.middleware.js';
+import { getEspecialidades, getEspecialidadById, createEspecialidad, updateEspecialidad, deleteEspecialidad, desactivarEspecialidad } from './especialidades.controller.js';
+import { crearEspecialidadSchema } from './dtos/especialidad.schema.js';
+import { verificarRol } from '../../middlewares/verificarRol.middleware.js';
+import { Rol } from '../auth/Usuario.model.js';
+import { validarJWT } from '../../middlewares/validarJWT.middleware.js';
 
 const router = Router();
 router.use(validarJWT);

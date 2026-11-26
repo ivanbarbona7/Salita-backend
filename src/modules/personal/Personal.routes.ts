@@ -6,12 +6,12 @@ import {
     getPersonalById,
     modificarPersonal,
     reactivarPersonal,
-} from './Personal.controller';
-import { validarSchema } from '../../middlewares/validarDatos.middleware';
-import { validarJWT } from '../../middlewares/validarJWT.middleware';
-import { verificarRol } from '../../middlewares/verificarRol.middleware';
-import { Rol } from '../auth/Usuario.model';
-import { actualizarPersonalSchema, crearPersonalSchema, queryPersonalSchema } from './dtos/personal.schema';
+} from './Personal.controller.js';
+import { validarSchema } from '../../middlewares/validarDatos.middleware.js';
+import { validarJWT } from '../../middlewares/validarJWT.middleware.js';
+import { verificarRol } from '../../middlewares/verificarRol.middleware.js';
+import { Rol } from '../auth/Usuario.model.js';
+import { actualizarPersonalSchema, crearPersonalSchema, queryPersonalSchema } from './dtos/personal.schema.js';
 
 const router = Router();
 

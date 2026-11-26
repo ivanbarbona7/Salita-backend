@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { validarJWT } from '../../middlewares/validarJWT.middleware';
-import { verificarRol } from '../../middlewares/verificarRol.middleware';
-import { validarSchema } from '../../middlewares/validarDatos.middleware';
-import { Rol } from '../auth/Usuario.model';
-import { crearObraSocialSchema, queryObrasSocialesSchema, renombrarObraSocialSchema } from './dtos/obraSocial.schema';
+import { validarJWT } from '../../middlewares/validarJWT.middleware.js';
+import { verificarRol } from '../../middlewares/verificarRol.middleware.js';
+import { validarSchema } from '../../middlewares/validarDatos.middleware.js';
+import { Rol } from '../auth/Usuario.model.js';
+import { crearObraSocialSchema, queryObrasSocialesSchema, renombrarObraSocialSchema } from './dtos/obraSocial.schema.js';
 import {
     crearObraSocial, desactivarObraSocial, eliminarObraSocial, getObrasSociales, reactivarObraSocial, renombrarObraSocial,
-} from './obrasSociales.controller';
+} from './obrasSociales.controller.js';
 
 const router = Router();
 

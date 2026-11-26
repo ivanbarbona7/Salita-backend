@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { hoyAR } from './rangoFechas';
+import { hoyAR } from './rangoFechas.js';
 
 const aDia = (fecha: Date) => fecha.toISOString().slice(0, 10);
 

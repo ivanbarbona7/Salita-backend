@@ -1,10 +1,10 @@
-import Turno from './Turno.model';
-import Medico from '../medicos/Medico.model';
-import type { IMedico } from '../medicos/types/Medico.interface';
-import Consultorio from '../consultorios/Consultorio.model';
-import { atiendeEspecialidad } from '../consultorios/atiendeEspecialidad';
-import Paciente from '../pacientes/Paciente.model';
-import { EstadoTurno } from './types/TurnoEstado.enum';
+import Turno from './Turno.model.js';
+import Medico from '../medicos/Medico.model.js';
+import type { IMedico } from '../medicos/types/Medico.interface.js';
+import Consultorio from '../consultorios/Consultorio.model.js';
+import { atiendeEspecialidad } from '../consultorios/atiendeEspecialidad.js';
+import Paciente from '../pacientes/Paciente.model.js';
+import { EstadoTurno } from './types/TurnoEstado.enum.js';
 
 // Argentina no tiene horario de verano: siempre es UTC-3.
 // Los horarios del médico ("08:00") están en hora argentina, y los turnos se guardan en UTC.
