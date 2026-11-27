@@ -34,6 +34,14 @@ export const queryDisponibilidadSchema = z.object({
     })
 });
 
+// "Nuevo turno": horarios libres de un médico un día, en todos sus consultorios
+export const queryHorariosMedicoSchema = z.object({
+    query: z.object({
+        medico: idMongo('El médico es obligatorio'),
+        fecha: z.iso.date({ message: 'La fecha debe tener el formato AAAA-MM-DD' }),
+    })
+});
+
 // Listado del dashboard de recepción: filtros y paginación en el servidor
 export const queryListadoTurnosSchema = z.object({
     query: z.object({
@@ -71,3 +79,4 @@ export type IQueryUrgencia = z.infer<typeof queryUrgenciaSchema>['query']
 export type IQueryDisponibilidad = z.infer<typeof queryDisponibilidadSchema>['query']
 export type ITurnoPaciente = z.infer<typeof turnoPacienteSchema>
 export type IQueryListadoTurnos = z.infer<typeof queryListadoTurnosSchema>['query'];
+export type IQueryHorariosMedico = z.infer<typeof queryHorariosMedicoSchema>['query'];

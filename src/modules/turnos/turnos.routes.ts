@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { getTurnos, getDisponibilidad, createTurno, deleteTurno, marcarAtendido, marcarNoAsistio, deshacerNoAsistio, crearTurnoPaciente, reprogramarTurnoPersonal, cancelarTurno, cancelarTurnos } from './turnos.controller.js';
+import { getTurnos, getDisponibilidad, createTurno, deleteTurno, marcarAtendido, marcarNoAsistio, deshacerNoAsistio, crearTurnoPaciente, reprogramarTurnoPersonal, cancelarTurno, cancelarTurnos, getHorariosMedico } from './turnos.controller.js';
 import { validarSchema } from '../../middlewares/validarDatos.middleware.js';
-import { CrearTurnoSchema, queryDisponibilidadSchema, reprogramarTurnoSchema, queryListadoTurnosSchema, cancelarTurnosSchema } from './dtos/turno.schema.js';
+import { CrearTurnoSchema, queryDisponibilidadSchema, reprogramarTurnoSchema, queryListadoTurnosSchema, cancelarTurnosSchema, queryHorariosMedicoSchema } from './dtos/turno.schema.js';
 import { validarJWT } from '../../middlewares/validarJWT.middleware.js';
 import { verificarRol } from '../../middlewares/verificarRol.middleware.js';
 import { Rol } from '../auth/Usuario.model.js';
@@ -34,6 +34,8 @@ router.patch('/medico/:id/atendido', validarJWT, verificarRol(Rol.MEDICO), marca
 router.get('/disponibilidad', validarJWT, verificarRol(Rol.ADMIN, Rol.RECEPCIONISTA, Rol.PACIENTE), validarSchema(queryDisponibilidadSchema), getDisponibilidad);
 
 // PERSONAL
+// Horarios libres de un médico en todos sus consultorios (formulario "Nuevo turno")
+router.get('/horarios-medico', validarJWT, verificarRol(Rol.ADMIN, Rol.RECEPCIONISTA), validarSchema(queryHorariosMedicoSchema), getHorariosMedico);
 router.get('/', validarJWT, verificarRol(Rol.ADMIN, Rol.RECEPCIONISTA), validarSchema(queryListadoTurnosSchema), getTurnos);
 router.post('/', validarJWT, verificarRol(Rol.ADMIN, Rol.RECEPCIONISTA), validarSchema(CrearTurnoSchema), createTurno);
 // Cancelar turnos pendientes (libera el horario): de a varios y de a uno

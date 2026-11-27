@@ -5,10 +5,11 @@ import { EstadoTurno } from './types/TurnoEstado.enum.js';
 import Turno from './Turno.model.js';
 import Paciente from '../pacientes/Paciente.model.js';
 import Medico from '../medicos/Medico.model.js';
-import { calcularHorariosLibres, reprogramarTurno, validarTurno, diaLimitePaciente, claveDia, MAX_TURNOS_PENDIENTES, DIAS_MAX_PACIENTE } from './turnos.service.js';
+import Consultorio from '../consultorios/Consultorio.model.js';
+import { calcularHorariosLibres, horariosDeUnDia, reprogramarTurno, validarTurno, diaLimitePaciente, claveDia, MAX_TURNOS_PENDIENTES, DIAS_MAX_PACIENTE } from './turnos.service.js';
 import { hoyAR } from '../../utils/rangoFechas.js';
 import { turnoPacienteSchema } from './dtos/turno.schema.js';
-import type { CrearTurnoDTO, IQueryDisponibilidad, IQueryListadoTurnos, IQueryUrgencia, IReprogramarTurnoDTO } from './dtos/turno.schema.js';
+import type { CrearTurnoDTO, IQueryDisponibilidad, IQueryHorariosMedico, IQueryListadoTurnos, IQueryUrgencia, IReprogramarTurnoDTO } from './dtos/turno.schema.js';
 import { respuestaEstandar } from '../../utils/respuestaEstandar.js';
 
 const mensajeDeError = (error: unknown) =>
@@ -127,6 +128,35 @@ const getDisponibilidad = async (req: Request<unknown, unknown, unknown, IQueryD
         const { medico, consultorio, fecha } = req.query;
         const disponibilidad = await calcularHorariosLibres(medico, consultorio, fecha);
         return respuestaEstandar(res, 200, true, 'Horarios obtenidos exitosamente', disponibilidad);
+    } catch (error: unknown) {
+        return respuestaEstandar(res, 500, false, 'Error al obtener los horarios', mensajeDeError(error));
+    }
+};
+
+// SOLO PERSONAL: horarios libres de un médico en un día, de todos sus consultorios (cada horario trae el suyo).
+// Es lo que usa "Nuevo turno": se elige especialidad y médico, y el consultorio sale del horario elegido.
+const getHorariosMedico = async (req: Request<unknown, unknown, unknown, IQueryHorariosMedico>, res: Response) => {
+    try {
+        const { medico: medicoId, fecha } = req.query;
+
+        const medico = await Medico.findOne({ _id: medicoId, activo: { $ne: false } }).select('horarioAtencion ausencias');
+        if (!medico) return respuestaEstandar(res, 404, false, 'Médico no encontrado');
+
+        const horarios = await horariosDeUnDia(medico, fecha);
+        const consultorios = await Consultorio.find({
+            _id: { $in: [...new Set(horarios.map((h) => h.consultorio))] },
+        }).select('nombre');
+        const porId = new Map(consultorios.map((c) => [String(c._id), c.nombre]));
+
+        const data = horarios.flatMap((h) => {
+            const nombre = porId.get(h.consultorio);
+            return nombre ? [{ inicio: h.inicio, hora: h.hora, consultorio: { id: h.consultorio, nombre } }] : [];
+        });
+
+        return respuestaEstandar(res, 200, true, 'Horarios obtenidos exitosamente', {
+            duracionTurno: medico.horarioAtencion?.duracionTurno ?? 20,
+            horarios: data,
+        });
     } catch (error: unknown) {
         return respuestaEstandar(res, 500, false, 'Error al obtener los horarios', mensajeDeError(error));
     }
@@ -364,4 +394,4 @@ const deshacerNoAsistio = async (req: Request<{ id: string }>, res: Response) =>
     }
 };
 
-export { cancelarTurno, cancelarTurnos, getTurnos, getDisponibilidad, createTurno, deleteTurno, marcarAtendido, marcarNoAsistio, deshacerNoAsistio, crearTurnoPaciente, reprogramarTurnoPersonal };
+export { getHorariosMedico, cancelarTurno, cancelarTurnos, getTurnos, getDisponibilidad, createTurno, deleteTurno, marcarAtendido, marcarNoAsistio, deshacerNoAsistio, crearTurnoPaciente, reprogramarTurnoPersonal };
