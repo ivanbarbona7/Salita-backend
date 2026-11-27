@@ -46,7 +46,7 @@ router.get('/:id', verificarRol(Rol.ADMIN, Rol.MEDICO, Rol.RECEPCIONISTA), getPa
 router.post('/', verificarRol(Rol.ADMIN, Rol.RECEPCIONISTA), validarSchema(crearPacienteSchema), createPaciente);
 
 // Editar: el DNI solo lo cambia el ADMIN (se controla dentro de modificarPaciente)
-router.put('/:id', verificarRol(Rol.ADMIN, Rol.RECEPCIONISTA), validarSchema(actualizarPacienteSchema), modificarPaciente);
+router.put('/:id', verificarRol(Rol.ADMIN, Rol.RECEPCIONISTA, Rol.MEDICO), validarSchema(actualizarPacienteSchema), modificarPaciente);
 
 // Desactivar: ruta propia (antes compartía PATCH /:id con modificar y la segunda nunca se ejecutaba)
 router.patch('/:id/desactivar', verificarRol(Rol.ADMIN, Rol.RECEPCIONISTA), desactivarPaciente);
